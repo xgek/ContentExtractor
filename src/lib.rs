@@ -69,6 +69,11 @@ pub fn run(verbose: bool, input: Option<String>, output: Option<String>) -> Resu
     } else {
         env_logger::init();
     }
+
+    if content.trim().is_empty() {
+    eprintln!("Warning: Input file is empty.");
+    return Ok(()); // or return an error if preferred
+}
     
     info!("Starting ContentExtractor processing");
     
